@@ -1,0 +1,90 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	border-collapse:collapse ;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+h1{
+	text-align: center;
+	background: gray;
+}
+h2{
+	margin-left:200px ;
+}
+.D{
+	padding: 10px;
+	margin-left: 1000px;
+	background: gray;
+}
+th{
+	width: 400px;
+	background: gray;
+}
+.B{
+	padding: 20px;
+	background: gray;
+}
+.table1{
+	font-size: 20px;
+	width: 70%;
+	height: 70%;
+	margin: 30px auto;
+	border: 1px solid;
+}
+.table2{
+	font-size: 20px;
+	width: 70%;
+	height: 70%;
+	margin: 30px auto;
+	border: 1px solid;
+}
+.table3{
+	font-size: 20px;
+	width: 65%;
+	height: 20%;
+	margin: 30px auto;
+	border: 1px solid;
+}
+.table4{
+	font-size: 20px;
+	width: 65%;
+	height: 20%;
+	margin: 30px auto;
+	border: 1px solid;
+}
+td{
+	border: 1px solid;
+}
+.div1{
+	float: left;
+	border: 1px solid;
+	width: 300px;
+	height: 300px;
+	margin-left: 200px;
+
+}
+.div2{
+	float: right;
+	border: 1px solid;
+	width: 300px;
+	height: 300px;
+	margin-right: 200px;
+	margin-top: -18px;
+
+}
+.l{
+	margin-left: 200px;
+	padding: 10px;
+	background: gray;
+}
+.tr{
+	background: gray;
+}
+h3{
+	text-align: center;
+}
+
+
