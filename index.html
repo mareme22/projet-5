@@ -1,65 +1,157 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="./style.css">
-	<title></title>
-</head>
-<body>
-	<div>
-		<h1 >Gestion budget</h1><br><br><br>
-	<center>
-		 <table>
-	 <tr >
-	 	<th> <button class="B">BUDGET 420000 CFA</button></th>
-	 	<th> <button class="B">DEPENSE 400000 CFA</button></th>
-	 	<th> <button class="B">SOLDE 20000 CFA</button></th>
-	 </tr>
-	 </table>
-	</center>
-	</div>
-	<div>
-	<h2><strong>Liste des dépenses</strong></h2>
-	<button class="D">Ajouter dépense</button>
-	<table class="table1">
-		<tr class="tr">
-			<td>Titre</td>
-			<td>Montant</td>
-			<td>Actions</td>
-		</tr>
-		<tr>
-			<td>Nourriture</td>
-			<td>9000</td>
-			<td><button>Modifier</button> | <button>Supprimer</button></td>
-		</tr>
-		<tr>
-			<td>Café</td>
-			<td>4000</td>
-			<td><button>Modifier</button> | <button>Supprimer</button></td>
-		</tr>
-	</table>
-	<h2><strong>Liste des revenus</strong></h2>
-	<button class="D">Ajouter Revenu</button>
-	<table class="table2">
-		<tr class="tr">
-			<td>Titre</td>
-			<td>Montant</td>
-			<td>Actions</td>		
-		</tr>
-		<tr>
-			<td>Salaire</td>
-			<td>400.000</td>
-			<td><button>Modifier</button> | <button>Supprimer</button></td>
-		</tr>
-		<tr>
-			<td>Bonus</td>
-			<td>1000</td>
-			<td><button>Modifier</button> | <button>Supprimer</button></td>
-		</tr>
-	</table>
-
-	</div> 
-	
-</body>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gestion de budget</title>
+  </head>
+  <body>
+    <h1>GESTION DE BUDGET</h1>
+    <table class="tab">
+      <tr>
+        <th><button>BUDGET</button> <label id="TotalRevenue">400000</label> </th>
+        <th><button>DEPENSE</button><label id="TotalDepense">300000</label></th>
+        <th><button>SOLDE</button> <label id="Solde">100000</label></th> 
+      </tr>
+    </table>
+    <div>
+      <h2>LISTE DES DEPENSES</h2>
+      <button id="BtnValidDep">Ajouter DEPENSE</button
+      ><br/>
+      <table id="tblDep"  class="depenseTable">
+        <tr>
+          <th>TITRE</th>
+          <th>MONTANT</th>
+          <th>ACTION</th>
+        </tr>
+      </table>
+      <h2>LISTE DES REVENUS</h2>
+      <button id="BtnValidRev">Ajouter REVENUS</button
+      ><br />
+      <table id="tblRev"  class="revenueTable">
+        <tr>
+          <th>TITRE</th>
+          <th>MONTANT</th>
+          <th>ACTION</th>
+        </tr>        
+      </table>
+    </div>
+    <br />
+    <div id="myModaldep" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Modal Header</h2>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <caption>
+              <h3>Ajouter DEPENSE</h3>
+            </caption>
+            <br/>
+            <tr>
+                <td>Categorie</td>
+                <td><select name="cat" id="cat">
+                    <option value="">--Veuillez choisir une catégorie --</option>
+                    <option value="Mang">Manger</option>
+                    <option value="Tran">Transport</option>
+                    <option value="Lois">Loisir</option>
+                    <option value="Fact">Facture</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Montant</td>
+                <td><input type="number" id="montantdep"></td>
+            </tr>
+          </table>
+          <button id="but_valider_depense">Valider</button>
+        </div>
+        <div class="modal-footer">
+          <h3>Modal Footer</h3>
+        </div>
+      </div>
+    </div>
+    <div class="dep" id="div2"></div>
+    <div id="myModalrev" class="modal">
+      <div class="modal-content">
+    <div id="myheader" class="header">
+        <div class="header-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Ajouter REVENUS</h2>
+          </div>
+          <div class="modal-div2">
+            <table class="table">
+              <br />
+              <tr>
+                  <td>classe</td>
+                  <td><select name="cla" id="cla">
+                    <option value="">--Veuillez choisir une class --</option>
+                    <option value="Sala">Salaire</option>
+                    <option value="Inde">Indemnité</option>
+                    <option value="Vent">Vente</option>
+                    <option value="Bene">Bénéfice</option>
+                  </select></td>
+              </tr>
+              <tr>
+                  <td>Montant</td>
+                  <td><input type="number" id="montantrev"></td>
+              </tr>
+            </table>
+            <button id="but_valider_revenue">Valider</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="myModalmod" class="modal">
+      <div class="modal-content">
+    <div id="myheader" class="header">
+        <div class="header-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Modifier Montant - <label id="labelCateg"></label></h2>
+          </div>
+          <div class="modal-div2">
+            <table class="table">
+              <br />
+              <tr>
+                  <td>Montant</td>
+                  <td><input type="number" id="nouveauMontant">
+                    <input type="hidden" id="codecateg"></td>
+              </tr>              
+            </table>
+            <button id="but_nouveau_montant">Valider</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="myModalmodRev" class="modal">
+      <div class="modal-content">
+    <div id="myheader" class="header">
+        <div class="header-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Modifier Montant - <label id="labelCla"></label></h2>
+          </div>
+          <div class="modal-div2">
+            <table class="table">
+              <br />
+              <tr>
+                  <td>Montant</td>
+                  <td><input type="number" id="nouveauMontantRev">
+                    <input type="hidden" id="codecla"></td>
+              </tr>              
+            </table>
+            <button id="but_nouveau_montant_rev">Valider</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script src="scrip.js"></script>
+  </body>
 </html>
